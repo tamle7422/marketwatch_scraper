@@ -102,7 +102,6 @@ class MarketwatchSpider(scrapy.Spider):
             "http://www.marketwatch.com/tools/markets/stocks/a-z/Z"]
 
         for url in urls:
-            # yield scrapy.Request(url=url, callback=self.parse)
             # yield SplashRequest(url=url,callback=self.parse,endpoint="execute", args={"lua_source": self.script}, \
             #     cache_args=['lua_source'],session_id="session1",headers={"User-Agent": random.choice(USER_AGENT_LIST)})
             yield scrapy.Request(url=url,callback=self.parseUrl,headers={"User-Agent": random.choice(USER_AGENT_LIST)})
