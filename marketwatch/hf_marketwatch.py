@@ -1,6 +1,6 @@
 import re
 from scrapy.loader import ItemLoader
-from .items import NyseStockItem,NasdaqStockItem,SingaporeStockItem
+from .items import StockItem
 import logging
 from datetime import datetime
 
