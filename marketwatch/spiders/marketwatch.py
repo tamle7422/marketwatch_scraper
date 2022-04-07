@@ -122,13 +122,16 @@ class MarketwatchSpider(scrapy.Spider):
                 yield scrapy.Request(url=url,callback=self.parse, \
                     headers={"User-Agent": random.choice(USER_AGENT_LIST)})
 
-
-
         except Exception as ex:
             print("exception => error occurred in parse url method --- {0}".format(ex))
 
     def parse(self,response):
         try:
+            print("")
+
+            paginationLinks = checkEmpty(response.xpath(".//div[contains(@id,'marketsindex')]/ul[@class='pagination']/li[not(@class)]/a/@href").getall())
+
+            concatStr = "https://www.marketwatch.com/"
             print("")
 
             # self.driver.execute_script("arguments[0].click();",yesterdayButton)
