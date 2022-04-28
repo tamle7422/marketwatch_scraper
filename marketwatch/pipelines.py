@@ -5,17 +5,17 @@ import os,re
 from sys import platform
 from scrapy import signals
 from scrapy.exporters import CsvItemExporter
-from .items import StockItem
+from .items import MarketWatchItem
 from datetime import datetime
 
 class MarketwatchPipeline:
     def __init__(self):
-        self.outputCsvDir = "csv_files/stock"
-        self.stockList = ["name","symbol","high","low","closePrice","volume","change","changePercent"]
+        self.outputMarketWatchDir = "csv_files"
+        self.marketWatchList = ["name","symbol","country","exchange","sector"]
 
-        self.stockWriter = ""
-        self.stockFileName = ""
-        self.stockExporter = ""
+        self.marketWatchWriter = ""
+        self.marketWatchFileName = ""
+        self.marketWatchExporter = ""
 
     @classmethod
     def from_crawler(cls,crawler):
@@ -27,30 +27,30 @@ class MarketwatchPipeline:
     def spider_opened(self,spider):
         # check system; change if on windows
         if (platform != "linux"):
-            self.outputStockDir = "csv_files\\stock"
+            self.outputMarketWatchDir = "csv_files"
 
         today = datetime.today()
         dt = datetime(today.year,today.month,today.day)
-        self.stockFileName = "eoddata_nyse_" + self.checkMonthDay(dt.month) + "_" + self.checkMonthDay(dt.day) + "_"\
+        self.marketWatchFileName = "marketwatch_" + self.checkMonthDay(dt.month) + "_" + self.checkMonthDay(dt.day) + "_"\
             + str(dt.year) + ".csv"
 
-        absolutePathStock = os.path.join(os.getcwd(),self.outputStockDir)
+        absolutePathMarketWatch = os.path.join(os.getcwd(),self.outputMarketWatchDir)
 
-        self.stockWriter = open(os.path.join(absolutePathStock,self.stockFileName),'wb+')
-        self.stockExporter = CsvItemExporter(self.stockWriter)
-        self.stockExporter.fields_to_export = self.stockList
-        self.stockExporter.start_exporting()
+        self.marketWatchWriter = open(os.path.join(absolutePathMarketWatch,self.marketWatchFileName),'wb+')
+        self.marketWatchExporter = CsvItemExporter(self.marketWatchWriter)
+        self.marketWatchExporter.fields_to_export = self.marketWatchList
+        self.marketWatchExporter.start_exporting()
 
     def spider_closed(self,spider):
-        self.stockExporter.finish_exporting()
-        self.stockWriter.close()
+        self.marketWatchExporter.finish_exporting()
+        self.marketWatchWriter.close()
 
     def process_item(self,item,spider):
-        if (isinstance(item,NyseStockItem)):
+        if (isinstance(item,MarketWatchItem)):
             if (len(item) == 0):
                 return item
             else:
-                self.stockExporter.export_item(item)
+                self.marketWatchExporter.export_item(item)
                 return item
 
     def checkMonthDay(self,dayOrMonth):

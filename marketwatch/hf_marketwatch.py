@@ -1,6 +1,6 @@
 import re
 from scrapy.loader import ItemLoader
-from .items import StockItem
+from .items import MarketWatchItem
 import logging
 from datetime import datetime
 
@@ -13,62 +13,46 @@ def setLocation(self,location):
     subComma = re.sub(r"[\,]",";",location)
     self.location = '-' + subComma + '-'
 
-def setHeight(self,height):
-    if (re.search(r"N/A",height) == None and re.search(r"0'0",height) == None):
-        subDoubleQuote = re.sub(r"[\"]","",height)
-        splitSingleQuote = subDoubleQuote.split("'")
-        self.height = str((int(splitSingleQuote[0]) * 12) + int(splitSingleQuote[1]))
-    else:
-        self.height = "None"
-
-def setHighLowCloseVolChg(self,data):
+def setSymbol(self,symbol):
     try:
-        self.high = checkEmpty(data[0].strip())
+        self.symbol = symbol.lower()
 
     except Exception as ex:
-        print("exception => error setting high --- {0}".format(ex))
-        self.high = "None"
+        print("exception => error setting symbol --- {0}".format(ex))
+        self.symbol = "None"
 
+def setName(self,name):
     try:
-        self.low = checkEmpty(data[1].strip())
+        self.name = name.lower()
 
     except Exception as ex:
-        print("exception => error setting low --- {0}".format(ex))
-        self.low = "None"
+        print("exception => error setting name --- {0}".format(ex))
+        self.name = "None"
 
+def setCountry(self,country):
     try:
-        self.closePrice = checkEmpty(data[2].strip())
+        self.country = country.lower()
 
     except Exception as ex:
-        print("exception => error setting close --- {0}".format(ex))
-        self.closePrice = "None"
+        print("exception => error setting country --- {0}".format(ex))
+        self.country = "None"
 
+def setExchange(self,exchange):
     try:
-        volume = checkEmpty(data[3].strip())
-        if (volume != "None"):
-            self.volume = volume.replace(",","")
-        else:
-            self.volume = "None"
+        self.exchange = exchange.lower()
 
     except Exception as ex:
-        print("exception => error setting volume --- {0}".format(ex))
-        self.volume = ""
+        print("exception => error setting exchange --- {0}".format(ex))
+        self.exchange = "None"
 
+
+def setSector(self,sector):
     try:
-        self.change = checkEmpty(data[4].strip())
+        self.sector = sector.lower()
 
     except Exception as ex:
-        print("exception => error setting change --- {0}".format(ex))
-        self.change = "None"
-
-def setChangePercentage(self,data):
-    try:
-        self.changePercent = checkEmpty(data.strip())
-
-    except Exception as ex:
-        print("exception => error setting high --- {0}".format(ex))
-        self.changePercent = "None"
-
+        print("exception => error setting sector --- {0}".format(ex))
+        self.sector = "None"
 
 def setAge(self,age):
     subStr = ""
@@ -156,48 +140,19 @@ def setFighterName(self,fighterName,type):
         else:
             self.fighter2Name = "None"
 
-def setDate(self,sel):
-    try:
-        monthNumber = ""
-        eventDate = checkEmpty(sel.xpath(".//td/div[contains(@class,'calendar-date')]/div/text()").getall())
-
-        if (eventDate != "None"):
-            month = eventDate[0].strip()
-            day = eventDate[1].strip()
-            year = eventDate[2].strip()
-
-            monthNumber = switchMonthThreeLetters(month)
-
-            # if (monthNumber != "None" and len(day) != 0 and len(year) != 0):
-            self.date = monthNumber + "/" + day + "/" + year
-            # else:
-            # self.date = "None"
-        else:
-            self.date = "None"
-
-    except Exception as ex:
-        print("exception => error setting date --- {0}".format(ex))
-        self.date = "None"
-
-def loadNyseStockItem(self,response):
+def loadMarketWatchItem(self,response):
     self.name = self.name if (self.name != "") else "None"
     self.symbol = self.symbol if (self.symbol != "") else "None"
-    self.high = self.high if (self.high != "") else "None"
-    self.low = self.low if (self.low != "") else "None"
-    self.closePrice = self.closePrice if (self.closePrice != "") else "None"
-    self.volume = self.volume if (self.volume != "") else "None"
-    self.change = self.change if (self.change != "") else "None"
-    self.changePercent = self.changePercent if (self.changePercent != "") else "None"
+    self.country = self.country if (self.country != "") else "None"
+    self.exchange = self.exchange if (self.exchange != "") else "None"
+    self.sector = self.sector if (self.sector != "") else "None"
 
-    loader = ItemLoader(item=NyseStockItem(),response=response)
+    loader = ItemLoader(item=MarketWatchItem(),response=response)
     loader.add_value("name",self.name)
     loader.add_value("symbol",self.symbol)
-    loader.add_value("high",self.high)
-    loader.add_value("low",self.low)
-    loader.add_value("closePrice",self.closePrice)
-    loader.add_value("volume",self.volume)
-    loader.add_value("change",self.change)
-    loader.add_value("changePercent",self.changePercent)
+    loader.add_value("country",self.country)
+    loader.add_value("exchange",self.exchange)
+    loader.add_value("sector",self.sector)
     return loader
 
 def loadNasdaqStockItem(self,response):
@@ -221,26 +176,7 @@ def loadNasdaqStockItem(self,response):
     loader.add_value("changePercent",self.changePercent)
     return loader
 
-def loadSingaporeStockItem(self,response):
-    self.name = self.name if (self.name != "") else "None"
-    self.symbol = self.symbol if (self.symbol != "") else "None"
-    self.high = self.high if (self.high != "") else "None"
-    self.low = self.low if (self.low != "") else "None"
-    self.closePrice = self.closePrice if (self.closePrice != "") else "None"
-    self.volume = self.volume if (self.volume != "") else "None"
-    self.change = self.change if (self.change != "") else "None"
-    self.changePercent = self.changePercent if (self.changePercent != "") else "None"
 
-    loader = ItemLoader(item=SingaporeStockItem(),response=response)
-    loader.add_value("name",self.name)
-    loader.add_value("symbol",self.symbol)
-    loader.add_value("high",self.high)
-    loader.add_value("low",self.low)
-    loader.add_value("closePrice",self.closePrice)
-    loader.add_value("volume",self.volume)
-    loader.add_value("change",self.change)
-    loader.add_value("changePercent",self.changePercent)
-    return loader
 
 def resetNyse(self):
     self.name = ""
@@ -253,16 +189,6 @@ def resetNyse(self):
     self.changePercent = ""
 
 def resetNasdaq(self):
-    self.name = ""
-    self.symbol = ""
-    self.high = ""
-    self.low = ""
-    self.closePrice = ""
-    self.volume = ""
-    self.change = ""
-    self.changePercent = ""
-
-def resetSingapore(self):
     self.name = ""
     self.symbol = ""
     self.high = ""
