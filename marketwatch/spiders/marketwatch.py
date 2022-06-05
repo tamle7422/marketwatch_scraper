@@ -5,20 +5,20 @@ import logging
 from selenium.webdriver.firefox.options import Options
 from scrapy.utils.log import configure_logging
 from ..hf_marketwatch import checkEmpty,setName,setSymbol,setCountry,setExchange,loadMarketWatchItem,resetNyse, \
-    loadNasdaqStockItem,resetNasdaq,setSector
+    resetNasdaq,setSector,loadMarketWatchItemSelector
 from scrapy_splash import SplashRequest,SplashFormRequest
 from ..settings import USER_AGENT_LIST
 
 class MarketwatchSpider(scrapy.Spider):
     name = "marketwatch"
-    # allowed_domains = ["eoddata.com"]
+    allowed_domains = ["marketwatch.com"]
     # start_urls =  [""]
 
     custom_settings = {
         "ITEM_PIPELINES": {
             "marketwatch.pipelines.MarketwatchPipeline": 196,
         },
-        "CLOSESPIDER_ITEMCOUNT": 20
+        "CLOSESPIDER_ITEMCOUNT": 13333
     }
 
     # configure_logging(install_root_handler=False)
@@ -69,16 +69,16 @@ class MarketwatchSpider(scrapy.Spider):
 
     def start_requests(self):
         urls = [
-            "http://www.marketwatch.com/tools/markets/stocks/a-z/0-9"]
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/B", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/C", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/D", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/E", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/F", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/G", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/H", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/I", \
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/0-9",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/A",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/B",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/C",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/D",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/E",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/F",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/G",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/H",
+            "http://www.marketwatch.com/tools/markets/stocks/a-z/I"]
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/J", \
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/K", \
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/L", \
@@ -105,12 +105,16 @@ class MarketwatchSpider(scrapy.Spider):
     # from list of urls, get pagination links associated with it
     def start(self,response):
         try:
-            splitIndex = ""
             indexes = checkEmpty(response.xpath(".//div[contains(@id,'marketsindex')]/ul[@class='pagination']/li/a/text()").getall())
+            # if (isinstance(indexes,list)):
+            #     print("list")
 
-            lastIndex = indexes[-2]
-            if (re.search(r"[\-]",lastIndex) != None):
-                lastIndex = lastIndex.split("-")[1]
+            lastIndex = indexes[-2:-1]
+            if (re.search(r"[\-]",str(lastIndex)) != None):
+                lastIndex = str(lastIndex).split("-")[1]
+                lastIndex = re.sub(r"[\'\(\)\]]","",lastIndex)
+            else:
+                lastIndex = "".join(lastIndex)
 
             # create pagination links
             for i in range(1,int(lastIndex)):
@@ -124,37 +128,73 @@ class MarketwatchSpider(scrapy.Spider):
     def constructUrl(self,response):
         try:
             paginationLinks = checkEmpty(response.xpath(".//div[contains(@id,'marketsindex')]/ul[@class='pagination']/li[not(@class)]/a/@href").getall())
+            linksSet = set(paginationLinks)
 
-            if (paginationLinks != None):
-                for i in paginationLinks:
+            trSelectors = checkEmpty(response.xpath(".//table[contains(@class,'table-condensed')]/tbody/tr"))
+            for sel in trSelectors:
+                loader = self.processFirstPage(response,sel)
+                yield loader.load_item()
+
+            if (linksSet != None):
+                for i in linksSet:
                     url = "https://www.marketwatch.com" + i
+                    url1 = response.urljoin(i)
 
-                    yield scrapy.Request(url=url,callback=self.extractData, \
-                        headers={"User-Agent": random.choice(USER_AGENT_LIST)})
+                    if (len(i) != None):
+                        # yield response.follow(url=url1,callback=self.extractData1)
+                        yield scrapy.Request(url=url,callback=self.extractData1, \
+                            headers={"User-Agent": random.choice(USER_AGENT_LIST)})
 
         except Exception as ex:
             print("exception => error occurred in construct url method --- {0}".format(ex))
 
+    def processFirstPage(self,response,sel):
+        name = checkEmpty(sel.xpath(".//td[@class='name']/a/text()").get())
+        if (name != "None"):
+            self.name = name
+        else:
+            self.name = "None"
 
-    def extractData(self,response):
+        symbol = checkEmpty(sel.xpath(".//td[@class='name']/a/small/text()").extract())
+        setSymbol(self,symbol)
+
+        country = checkEmpty(sel.xpath(".//td[2]/text()").get())
+        setCountry(self, country)
+
+        exchange = checkEmpty(sel.xpath(".//td[3]/text()").get())
+        setExchange(self, exchange)
+
+        sector = checkEmpty(sel.xpath(".//td[4]/text()").get())
+        setSector(self, sector)
+
+        loader = loadMarketWatchItemSelector(self,response,sel)
+        return loader
+
+    def extractData1(self,response):
         try:
-            name = checkEmpty(response.xpath(".//table[contains(@class,'table-condensed')]/tbody/tr/td[@class='name']/a/text()").get())
-            setName(self,name)
+            trSelectors = checkEmpty(response.xpath(".//table[contains(@class,'table-condensed')]/tbody/tr"))
 
-            symbol = checkEmpty(response.xpath(".//table[contains(@class,'table-condensed')]/tbody/tr/td[@class='name']/a/small/text()").get())
-            setSymbol(self,symbol)
+            for sel in trSelectors:
+                name = checkEmpty(sel.xpath(".//td[@class='name']/a/text()").get())
+                if (name != "None"):
+                    self.name = name
+                else:
+                    self.name = "None"
 
-            country = checkEmpty(response.xpath(".//table[contains(@class,'table-condensed')]/tbody/tr/td[2]/text()").get())
-            setCountry(self,country)
+                symbol = checkEmpty(sel.xpath(".//td[@class='name']/a/small/text()").extract())
+                setSymbol(self, symbol)
 
-            exchange = checkEmpty(response.xpath(".//table[contains(@class,'table-condensed')]/tbody/tr/td[3]/text()").get())
-            setExchange(self,exchange)
+                country = checkEmpty(sel.xpath(".//td[2]/text()").get())
+                setCountry(self, country)
 
-            sector = checkEmpty(response.xpath(".//table[contains(@class,'table-condensed')]/tbody/tr/td[4]/text()").get())
-            setSector(self,sector)
+                exchange = checkEmpty(sel.xpath(".//td[3]/text()").get())
+                setExchange(self, exchange)
 
-            loader = loadMarketWatchItem(self,response)
-            yield loader.load_item()
+                sector = checkEmpty(sel.xpath(".//td[4]/text()").get())
+                setSector(self, sector)
+
+                loader = loadMarketWatchItemSelector(self,response,sel)
+                yield loader.load_item()
 
         except Exception as ex:
-            print("exception => error occurred in parse url method --- {0}".format(ex))
+            print("exception => error occurred in extract data method --- {0}".format(ex))

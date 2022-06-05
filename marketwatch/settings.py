@@ -73,7 +73,6 @@ DOWNLOADER_MIDDLEWARES = {
 #     "eoddata.pipelines.EoddataNysePipeline": 300,
 # }
 
-
 # enable and configure the AutoThrottle extension (disabled by default)
 # see https://docs.scrapy.org/en/latest/topics/autothrottle.html
 AUTOTHROTTLE_ENABLED = True

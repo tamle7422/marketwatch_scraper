@@ -4,6 +4,9 @@ from .items import MarketWatchItem
 import logging
 from datetime import datetime
 
+
+
+
 def getTime():
     now = datetime.now()
     currentDate = now.strftime("%m_%d_%y")
@@ -15,7 +18,13 @@ def setLocation(self,location):
 
 def setSymbol(self,symbol):
     try:
-        self.symbol = symbol.lower()
+        symbol = "".join(symbol)
+        subParen = re.sub(r"[\(\)]","",symbol)
+
+        if (len(subParen) != 0 and subParen != "None"):
+            self.symbol = subParen.lower()
+        else:
+            self.symbol = "None"
 
     except Exception as ex:
         print("exception => error setting symbol --- {0}".format(ex))
@@ -31,7 +40,10 @@ def setName(self,name):
 
 def setCountry(self,country):
     try:
-        self.country = country.lower()
+        if (country != "None"):
+            self.country = country.lower()
+        else:
+            self.country = "None"
 
     except Exception as ex:
         print("exception => error setting country --- {0}".format(ex))
@@ -39,7 +51,10 @@ def setCountry(self,country):
 
 def setExchange(self,exchange):
     try:
-        self.exchange = exchange.lower()
+        if (exchange != "None"):
+            self.exchange = exchange.lower()
+        else:
+            self.exchange = "None"
 
     except Exception as ex:
         print("exception => error setting exchange --- {0}".format(ex))
@@ -48,7 +63,10 @@ def setExchange(self,exchange):
 
 def setSector(self,sector):
     try:
-        self.sector = sector.lower()
+        if (sector != "None"):
+            self.sector = sector.lower()
+        else:
+            self.sector = "None"
 
     except Exception as ex:
         print("exception => error setting sector --- {0}".format(ex))
@@ -155,26 +173,41 @@ def loadMarketWatchItem(self,response):
     loader.add_value("sector",self.sector)
     return loader
 
-def loadNasdaqStockItem(self,response):
-    self.name = self.name if (self.name != "") else "None"
-    self.symbol = self.symbol if (self.symbol != "") else "None"
-    self.high = self.high if (self.high != "") else "None"
-    self.low = self.low if (self.low != "") else "None"
-    self.closePrice = self.closePrice if (self.closePrice != "") else "None"
-    self.volume = self.volume if (self.volume != "") else "None"
-    self.change = self.change if (self.change != "") else "None"
-    self.changePercent = self.changePercent if (self.changePercent != "") else "None"
+def loadMarketWatchItemSelector(self,response,sel):
+    self.name = self.name if (len(self.name) != 0) else "None"
+    self.symbol = self.symbol if (len(self.symbol) != 0) else "None"
+    self.country = self.country if (len(self.country) != 0) else "None"
+    self.exchange = self.exchange if (len(self.exchange) != 0) else "None"
+    self.sector = self.sector if (len(self.sector) != 0) else "None"
 
-    loader = ItemLoader(item=NasdaqStockItem(),response=response)
+    loader = ItemLoader(item=MarketWatchItem(),response=response)
     loader.add_value("name",self.name)
     loader.add_value("symbol",self.symbol)
-    loader.add_value("high",self.high)
-    loader.add_value("low",self.low)
-    loader.add_value("closePrice",self.closePrice)
-    loader.add_value("volume",self.volume)
-    loader.add_value("change",self.change)
-    loader.add_value("changePercent",self.changePercent)
+    loader.add_value("country",self.country)
+    loader.add_value("exchange",self.exchange)
+    loader.add_value("sector",self.sector)
     return loader
+
+# def loadNasdaqStockItem(self,response):
+#     self.name = self.name if (self.name != "") else "None"
+#     self.symbol = self.symbol if (self.symbol != "") else "None"
+#     self.high = self.high if (self.high != "") else "None"
+#     self.low = self.low if (self.low != "") else "None"
+#     self.closePrice = self.closePrice if (self.closePrice != "") else "None"
+#     self.volume = self.volume if (self.volume != "") else "None"
+#     self.change = self.change if (self.change != "") else "None"
+#     self.changePercent = self.changePercent if (self.changePercent != "") else "None"
+#
+#     loader = ItemLoader(item=NasdaqStockItem(),response=response)
+#     loader.add_value("name",self.name)
+#     loader.add_value("symbol",self.symbol)
+#     loader.add_value("high",self.high)
+#     loader.add_value("low",self.low)
+#     loader.add_value("closePrice",self.closePrice)
+#     loader.add_value("volume",self.volume)
+#     loader.add_value("change",self.change)
+#     loader.add_value("changePercent",self.changePercent)
+#     return loader
 
 
 
