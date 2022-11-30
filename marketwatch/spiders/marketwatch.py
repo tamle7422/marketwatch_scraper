@@ -4,8 +4,8 @@ import random
 import logging
 from selenium.webdriver.firefox.options import Options
 from scrapy.utils.log import configure_logging
-from ..hf_marketwatch import checkEmpty,setName,setSymbol,setCountry,setExchange,loadMarketWatchItem,resetNyse, \
-    resetNasdaq,setSector,loadMarketWatchItemSelector
+from ..hf_marketwatch import setName,setName1,setSymbol,setCountry,setExchange,loadMarketWatchItem,setSector, \
+    loadMarketWatchItemSelector,checkEmpty
 from scrapy_splash import SplashRequest,SplashFormRequest
 from ..settings import USER_AGENT_LIST
 
@@ -16,9 +16,9 @@ class MarketwatchSpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            "marketwatch.pipelines.MarketwatchPipeline": 196,
+            "marketwatch.pipelines.MarketwatchPipeline": 253,
         },
-        "CLOSESPIDER_ITEMCOUNT": 22
+        "CLOSESPIDER_ITEMCOUNT": 8
     }
 
     configure_logging(install_root_handler=False)
@@ -144,23 +144,11 @@ class MarketwatchSpider(scrapy.Spider):
             print("exception --- error in construct url => {0}".format(ex))
 
     def processFirstPage(self,response,sel):
-        name = checkEmpty(sel.xpath(".//td[@class='name']/a/text()").get())
-        if (name != "None"):
-            self.name = name
-        else:
-            self.name = "None"
-
-        symbol = checkEmpty(sel.xpath(".//td[@class='name']/a/small/text()").extract())
-        setSymbol(self,symbol)
-
-        country = checkEmpty(sel.xpath(".//td[2]/text()").get())
-        setCountry(self, country)
-
-        exchange = checkEmpty(sel.xpath(".//td[3]/text()").get())
-        setExchange(self, exchange)
-
-        sector = checkEmpty(sel.xpath(".//td[4]/text()").get())
-        setSector(self, sector)
+        setName1(self,sel)
+        setSymbol(self,sel)
+        setCountry(self,sel)
+        setExchange(self,sel)
+        setSector(self,sel)
 
         loader = loadMarketWatchItemSelector(self,response,sel)
         return loader
@@ -168,25 +156,12 @@ class MarketwatchSpider(scrapy.Spider):
     def extractData1(self,response):
         try:
             trSelectors = checkEmpty(response.xpath(".//table[contains(@class,'table-condensed')]/tbody/tr"))
-
             for sel in trSelectors:
-                name = checkEmpty(sel.xpath(".//td[@class='name']/a/text()").get())
-                if (name != "None"):
-                    self.name = name
-                else:
-                    self.name = "None"
-
-                symbol = checkEmpty(sel.xpath(".//td[@class='name']/a/small/text()").extract())
-                setSymbol(self, symbol)
-
-                country = checkEmpty(sel.xpath(".//td[2]/text()").get())
-                setCountry(self, country)
-
-                exchange = checkEmpty(sel.xpath(".//td[3]/text()").get())
-                setExchange(self, exchange)
-
-                sector = checkEmpty(sel.xpath(".//td[4]/text()").get())
-                setSector(self, sector)
+                setName1(self,sel)
+                setSymbol(self,sel)
+                setCountry(self,sel)
+                setExchange(self,sel)
+                setSector(self,sel)
 
                 loader = loadMarketWatchItemSelector(self,response,sel)
                 yield loader.load_item()
