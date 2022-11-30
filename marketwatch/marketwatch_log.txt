@@ -1,0 +1,1875 @@
+INFO: Scrapy 2.6.1 started (bot: marketwatch)
+INFO: Versions: lxml 4.8.0.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.8.10 (default, Jun 22 2022, 20:18:18) - [GCC 9.4.0], pyOpenSSL 22.0.0 (OpenSSL 1.1.1n  15 Mar 2022), cryptography 36.0.2, Platform Linux-5.15.0-53-generic-x86_64-with-glibc2.29
+INFO: Overridden settings:
+{'AUTOTHROTTLE_ENABLED': True,
+ 'AUTOTHROTTLE_START_DELAY': 2.0,
+ 'BOT_NAME': 'marketwatch',
+ 'CLOSESPIDER_ITEMCOUNT': 8,
+ 'CONCURRENT_REQUESTS': 2,
+ 'COOKIES_ENABLED': False,
+ 'DOWNLOAD_DELAY': 2.25,
+ 'HTTPCACHE_ENABLED': True,
+ 'LOG_FILE': 'log/marketwatch_11_30_22.log',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'marketwatch.spiders',
+ 'RETRY_HTTP_CODES': [403],
+ 'SPIDER_MODULES': ['marketwatch.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'}
+DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+INFO: Telnet Password: 723b125d04598692
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.closespider.CloseSpider',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy_splash.SplashCookiesMiddleware',
+ 'scrapy_splash.SplashMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'scrapy.downloadermiddlewares.httpcache.HttpCacheMiddleware']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy_splash.SplashDeduplicateArgsMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+['marketwatch.pipelines.MarketwatchPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Using filesystem cache storage in /home/le/Desktop/programming/python/marketwatch_scraper/.scrapy/httpcache
+INFO: Telnet console listening on 127.0.0.1:6023
+DEBUG: Redirecting (301) to <GET https://www.marketwatch.com/tools/markets/stocks/a-z/A> from <GET http://www.marketwatch.com/tools/markets/stocks/a-z/A>
+DEBUG: Crawled (200) <GET https://www.marketwatch.com/tools/markets/stocks/a-z/A> (referer: None) ['cached']
+DEBUG: Crawled (200) <GET https://www.marketwatch.com/tools/markets/stocks/a-z/A/1> (referer: https://www.marketwatch.com/tools/markets/stocks/a-z/A) ['cached']
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['vietnam'],
+ 'exchange': ['hstc'],
+ 'name': ['A Cuong Mineral Group JSC '],
+ 'sector': ['general mining'],
+ 'symbol': ['acm']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['A Infrastructure Ltd. '],
+ 'sector': ['building materials/products'],
+ 'symbol': ['539620']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['south korea'],
+ 'exchange': ['xkrx'],
+ 'name': ['A Self-Administered Real Estate Investment Trust '],
+ 'sector': ['residential reits'],
+ 'symbol': ['140910']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['A SPAC I Acquisition Corp. '],
+ 'sector': ['shell companies'],
+ 'symbol': ['ascau']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['A SPAC I Acquisition Corp. Rt '],
+ 'sector': ['shell companies'],
+ 'symbol': ['ascar']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['A SPAC I Acquisition Corp. Wt '],
+ 'sector': ['None'],
+ 'symbol': ['ascaw']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['A SPAC II Acquisition Corp. '],
+ 'sector': ['shell companies'],
+ 'symbol': ['ascbu']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['A&A Material Corp. '],
+ 'sector': ['building materials/products'],
+ 'symbol': ['5391']}
+INFO: Closing spider (closespider_itemcount)
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['A&D HOLON Holdings Co. Ltd. '],
+ 'sector': ['precision products'],
+ 'symbol': ['7745']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['A&M Febcon Ltd. '],
+ 'sector': ['industrial products'],
+ 'symbol': ['540697']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xnse'],
+ 'name': ['A&M Jumbo Bags Ltd. '],
+ 'sector': ['containers/packaging'],
+ 'symbol': ['amjumbo']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['hong kong'],
+ 'exchange': ['xhkg'],
+ 'name': ['A&S Group (Holdings) Ltd. '],
+ 'sector': ['transportation services'],
+ 'symbol': ['1737']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['philippines'],
+ 'exchange': ['xphs'],
+ 'name': ['A. Brown Co. Inc. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['brn']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['philippines'],
+ 'exchange': ['xphs'],
+ 'name': ['A. Brown Co. Inc. Pfd. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['brnp']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['israel'],
+ 'exchange': ['xtae'],
+ 'name': ['A. Libental Holdings Ltd. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['lbtl']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['israel'],
+ 'exchange': ['xtae'],
+ 'name': ['A. Luzon Real Estate & Finance Ltd. '],
+ 'sector': ['hotels'],
+ 'symbol': ['lznr']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['philippines'],
+ 'exchange': ['xphs'],
+ 'name': ['A. Soriano Corp. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['ans']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['cyprus'],
+ 'exchange': ['xcys'],
+ 'name': ['A. Tsokkos Hotels Public Ltd. '],
+ 'sector': ['hotels'],
+ 'symbol': ['tsh']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['A.D. Works Group Co. Ltd. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['2982']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['A.F. Enterprises Ltd. '],
+ 'sector': ['wholesalers'],
+ 'symbol': ['538351']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['chile'],
+ 'exchange': ['xsgo'],
+ 'name': ['A.F.P. Cuprum S.A. '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['cuprum']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['chile'],
+ 'exchange': ['xsgo'],
+ 'name': ['A.F.P. Habitat S.A. '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['habitat']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['chile'],
+ 'exchange': ['xsgo'],
+ 'name': ['A.F.P. Planvital S.A. '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['planvital']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['chile'],
+ 'exchange': ['xsgo'],
+ 'name': ['A.F.P. ProVida S.A. '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['provida']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['A.G. Barr PLC '],
+ 'sector': ['non-alcoholic beverages/drinks'],
+ 'symbol': ['bag']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['canada'],
+ 'exchange': ['xtse'],
+ 'name': ['A.G.F. Management Ltd. Cl B NV '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['agf.b']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['A.G.F. Management Ltd. Cl B NV '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['agfmf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['taiwan'],
+ 'exchange': ['xtai'],
+ 'name': ['A.G.V. Products Corp. '],
+ 'sector': ['food products'],
+ 'symbol': ['1217']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['A.I.S. Resources Ltd. '],
+ 'sector': ['general mining'],
+ 'symbol': ['ais']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['A.I.S. Resources Ltd. '],
+ 'sector': ['general mining'],
+ 'symbol': ['aissf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['thailand'],
+ 'exchange': ['xbkk'],
+ 'name': ['A.J. Plast PCL '],
+ 'sector': ['chemicals'],
+ 'symbol': ['aj']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['A.K. Capital Services Ltd. '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['530499']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['A.K. Spintex Ltd. '],
+ 'sector': ['clothing'],
+ 'symbol': ['539300']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['a.k.a. Brands Holding Corp. '],
+ 'sector': ['clothing retail'],
+ 'symbol': ['aka']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['A.O. Smith Corp. '],
+ 'sector': ['building materials/products'],
+ 'symbol': ['0l7a']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['A.O. Smith Corp. '],
+ 'sector': ['building materials/products'],
+ 'symbol': ['aos']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['A.P. Moeller-Maersk A/S ADR '],
+ 'sector': ['water transport/shipping'],
+ 'symbol': ['amkby']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['A.P. Moeller-Maersk A/S Series A '],
+ 'sector': ['water transport/shipping'],
+ 'symbol': ['amkaf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['denmark'],
+ 'exchange': ['xcse'],
+ 'name': ['A.P. Moeller-Maersk A/S Series A '],
+ 'sector': ['water transport/shipping'],
+ 'symbol': ['maersk.a']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['A.P. Moeller-Maersk A/S Series A '],
+ 'sector': ['water transport/shipping'],
+ 'symbol': ['0o76']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['denmark'],
+ 'exchange': ['xcse'],
+ 'name': ['A.P. Moeller-Maersk A/S Series B '],
+ 'sector': ['water transport/shipping'],
+ 'symbol': ['maersk.b']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['A.P. Moeller-Maersk A/S Series B '],
+ 'sector': ['water transport/shipping'],
+ 'symbol': ['amkbf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xetr'],
+ 'name': ['A.P. Moeller-Maersk A/S Series B '],
+ 'sector': ['water transport/shipping'],
+ 'symbol': ['dp4b']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['A.P. Moller-Maersk A/S Series B '],
+ 'sector': ['water transport/shipping'],
+ 'symbol': ['0o77']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['poland'],
+ 'exchange': ['xwar'],
+ 'name': ['A.P.N. Promise S.A. '],
+ 'sector': ['computer services'],
+ 'symbol': ['pro']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['hong kong'],
+ 'exchange': ['xhkg'],
+ 'name': ['A.Plus Group Holdings Ltd. '],
+ 'sector': ['printing'],
+ 'symbol': ['1841']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['greece'],
+ 'exchange': ['xath'],
+ 'name': ['A.S. Co. S.A. '],
+ 'sector': ['specialty retail'],
+ 'symbol': ['asco']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xetr'],
+ 'name': ['A.S. Creation Tapeten AG '],
+ 'sector': ['furniture'],
+ 'symbol': ['acwn']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['italy'],
+ 'exchange': ['xmil'],
+ 'name': ['A.S. Roma S.p.A. '],
+ 'sector': ['recreational services'],
+ 'symbol': ['asr']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['france'],
+ 'exchange': ['xpar'],
+ 'name': ['A.S.T. Groupe S.A. '],
+ 'sector': ['residential building construction'],
+ 'symbol': ['alast']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['A-1 Acid Ltd. '],
+ 'sector': ['wholesalers'],
+ 'symbol': ['542012']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['A-1 Group Inc. '],
+ 'sector': ['tobacco'],
+ 'symbol': ['awon']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['australia'],
+ 'exchange': ['xasx'],
+ 'name': ['A1 Investments & Resources Ltd. '],
+ 'sector': ['finance companies'],
+ 'symbol': ['ayi']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['A10 Networks Inc. '],
+ 'sector': ['networking'],
+ 'symbol': ['aten']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['new zealand'],
+ 'exchange': ['xnze'],
+ 'name': ['a2 Milk Co. Ltd. '],
+ 'sector': ['food products'],
+ 'symbol': ['atm']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['australia'],
+ 'exchange': ['xasx'],
+ 'name': ['a2 Milk Co. Ltd. '],
+ 'sector': ['food products'],
+ 'symbol': ['a2m']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['a2 Milk Co. Ltd. '],
+ 'sector': ['food products'],
+ 'symbol': ['acopf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['a2 Milk Co. Ltd. ADR '],
+ 'sector': ['food products'],
+ 'symbol': ['acopy']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['A2A S.p.A. '],
+ 'sector': ['electric utilities'],
+ 'symbol': ['0n54']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['italy'],
+ 'exchange': ['xmil'],
+ 'name': ['A2A S.p.A. '],
+ 'sector': ['electric utilities'],
+ 'symbol': ['a2a']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['A2A S.p.A. ADR '],
+ 'sector': ['electric utilities'],
+ 'symbol': ['aemmy']}
+DEBUG: Crawled (200) <GET https://www.marketwatch.com/tools/markets/stocks/a-z/A/37> (referer: https://www.marketwatch.com/tools/markets/stocks/a-z/A)
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['australia'],
+ 'exchange': ['xasx'],
+ 'name': ['A2B Australia Ltd. '],
+ 'sector': ['consumer finance'],
+ 'symbol': ['a2b']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['A2Z Infra Engineering Ltd. '],
+ 'sector': ['technical services'],
+ 'symbol': ['533292']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['A2Z Smart Technologies Corp. '],
+ 'sector': ['defense equipment/products'],
+ 'symbol': ['az']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['A2Z Smart Technologies Corp. '],
+ 'sector': ['defense equipment/products'],
+ 'symbol': ['az']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['hong kong'],
+ 'exchange': ['xhkg'],
+ 'name': ['A8 New Media Group Ltd. '],
+ 'sector': ['toys & games'],
+ 'symbol': ['800']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['china'],
+ 'exchange': ['xshg'],
+ 'name': ['AA Industrial Belting (Shanghai) Co. Ltd. A '],
+ 'sector': ['industrial products'],
+ 'symbol': ['603580']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['AA Plus Tradelink Ltd. '],
+ 'sector': ['wholesalers'],
+ 'symbol': ['543319']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['sweden'],
+ 'exchange': ['xsto'],
+ 'name': ['AAC Clyde Space AB '],
+ 'sector': ['aerospace products/parts'],
+ 'symbol': ['aac']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['AAC Clyde Space AB '],
+ 'sector': ['aerospace products/parts'],
+ 'symbol': ['accmf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['germany'],
+ 'exchange': ['xfra'],
+ 'name': ['AAC Technologies Holdings Inc. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['a2xn']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['hong kong'],
+ 'exchange': ['xhkg'],
+ 'name': ['AAC Technologies Holdings Inc. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['2018']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['AAC Technologies Holdings Inc. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['aacaf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['AAC Technologies Holdings Inc. ADR '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['aacay']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Aadi Bioscience Inc. '],
+ 'sector': ['biotechnology'],
+ 'symbol': ['aadi']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aadi Industries Ltd. '],
+ 'sector': ['containers/packaging'],
+ 'symbol': ['530027']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['taiwan'],
+ 'exchange': ['xtai'],
+ 'name': ['Aaeon Technology Inc. '],
+ 'sector': ['computers/consumer electronics'],
+ 'symbol': ['6579']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['hong kong'],
+ 'exchange': ['xhkg'],
+ 'name': ['AAG Energy Holdings Ltd. '],
+ 'sector': ['coal'],
+ 'symbol': ['2686']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['romania'],
+ 'exchange': ['xbse'],
+ 'name': ['Aages S.A. '],
+ 'sector': ['industrial machinery'],
+ 'symbol': ['aag']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['sweden'],
+ 'exchange': ['xsto'],
+ 'name': ['AAK AB '],
+ 'sector': ['food products'],
+ 'symbol': ['aak']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['AAK AB '],
+ 'sector': ['food products'],
+ 'symbol': ['0a0j']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/37>
+{'country': ['None'],
+ 'exchange': ['None'],
+ 'name': ['AAK AB '],
+ 'sector': ['None'],
+ 'symbol': ['None']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/37>
+{'country': ['None'],
+ 'exchange': ['None'],
+ 'name': ['AAK AB '],
+ 'sector': ['None'],
+ 'symbol': ['None']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/37>
+{'country': ['None'],
+ 'exchange': ['None'],
+ 'name': ['AAK AB '],
+ 'sector': ['None'],
+ 'symbol': ['None']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['netherlands'],
+ 'exchange': ['xams'],
+ 'name': ['Aalberts N.V. '],
+ 'sector': ['industrial products'],
+ 'symbol': ['aalb']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Aalberts N.V. '],
+ 'sector': ['industrial products'],
+ 'symbol': ['0nx1']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/37>
+{'country': ['None'],
+ 'exchange': ['None'],
+ 'name': ['Aalberts N.V. '],
+ 'sector': ['None'],
+ 'symbol': ['None']}
+DEBUG: Filtered duplicate request: <GET https://www.marketwatch.com/tools/markets/stocks/a-z/A/33> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['denmark'],
+ 'exchange': ['xcse'],
+ 'name': ['Aalborg Boldspilklub A/S '],
+ 'sector': ['recreational services'],
+ 'symbol': ['aab']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['finland'],
+ 'exchange': ['xhel'],
+ 'name': ['Aallon Group Oyj '],
+ 'sector': ['accounting'],
+ 'symbol': ['aallon']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['qatar'],
+ 'exchange': ['dsmd'],
+ 'name': ['Aamal Co. Q.P.S.C. '],
+ 'sector': ['diversified holding companies'],
+ 'symbol': ['ahcs']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Aamaxan Transport Group Inc. '],
+ 'sector': ['medical equipment/supplies'],
+ 'symbol': ['aaxt']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['bangladesh'],
+ 'exchange': ['xdha'],
+ 'name': ['Aamra Networks Ltd. '],
+ 'sector': ['wired telecommunications services'],
+ 'symbol': ['aamranet']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['bangladesh'],
+ 'exchange': ['xdha'],
+ 'name': ['Aamra Technologies Ltd. '],
+ 'sector': ['computer services'],
+ 'symbol': ['aamratech']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aananda Lakshmi Spinning Mills Ltd. '],
+ 'sector': ['clothing'],
+ 'symbol': ['539096']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aanchal Ispat Ltd. '],
+ 'sector': ['iron/steel'],
+ 'symbol': ['538812']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['AAON Inc. '],
+ 'sector': ['building materials/products'],
+ 'symbol': ['aaon']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xetr'],
+ 'name': ['aap Implantate AG '],
+ 'sector': ['medical equipment/supplies'],
+ 'symbol': ['aaq1']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['AAP Inc. '],
+ 'sector': ['food products'],
+ 'symbol': ['aapj']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['thailand'],
+ 'exchange': ['xbkk'],
+ 'name': ['AAPICO Hitech PCL '],
+ 'sector': ['motor vehicle parts'],
+ 'symbol': ['ah']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['AAR Corp. '],
+ 'sector': ['aerospace products/parts'],
+ 'symbol': ['air']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Aareal Bank AG '],
+ 'sector': ['mortgages'],
+ 'symbol': ['0mg0']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xetr'],
+ 'name': ['Aareal Bank AG '],
+ 'sector': ['mortgages'],
+ 'symbol': ['arl']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aarey Drugs & Pharmaceuticals Ltd. '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['524412']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aarnav Fashions Ltd. '],
+ 'sector': ['clothing'],
+ 'symbol': ['539562']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xnse'],
+ 'name': ['Aaron Industries Ltd. 144A '],
+ 'sector': ['industrial machinery'],
+ 'symbol': ['aaron']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ["Aaron's Co. Inc. "],
+ 'sector': ['general services'],
+ 'symbol': ['aan']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aartech Solonics Ltd. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['542580']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aarti Drugs Ltd. '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['524348']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aarti Industries Ltd. '],
+ 'sector': ['None'],
+ 'symbol': ['524208']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aarti Surfactants Ltd. '],
+ 'sector': ['chemicals'],
+ 'symbol': ['543210']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aarvee Denims & Exports Ltd. '],
+ 'sector': ['clothing'],
+ 'symbol': ['514274']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xnse'],
+ 'name': ['Aarvi Encon Ltd. '],
+ 'sector': ['employment/training services'],
+ 'symbol': ['aarvi']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['norway'],
+ 'exchange': ['xosl'],
+ 'name': ['Aasen Sparebank '],
+ 'sector': ['banking'],
+ 'symbol': ['aasb']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aashka Hospitals Ltd. '],
+ 'sector': ['healthcare provision'],
+ 'symbol': ['543346']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aastamangalam Finance Ltd. '],
+ 'sector': ['finance companies'],
+ 'symbol': ['511764']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aavas Financiers Ltd. '],
+ 'sector': ['None'],
+ 'symbol': ['541988']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['kuwait'],
+ 'exchange': ['xkuw'],
+ 'name': ['Aayan Leasing & Investment Co. K.S.C. '],
+ 'sector': ['finance companies'],
+ 'symbol': ['aayan']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['kuwait'],
+ 'exchange': ['xkuw'],
+ 'name': ["A'ayan Real Estate Co. S.A.K. "],
+ 'sector': ['real estate developers'],
+ 'symbol': ['aayanre']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aayush Food & Herbs Ltd. '],
+ 'sector': ['food retail'],
+ 'symbol': ['539528']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['bangladesh'],
+ 'exchange': ['xdha'],
+ 'name': ['AB Bank Ltd. '],
+ 'sector': ['banking'],
+ 'symbol': ['abbank']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['hong kong'],
+ 'exchange': ['xhkg'],
+ 'name': ['AB Builders Group Ltd. '],
+ 'sector': ['construction'],
+ 'symbol': ['1615']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['AB Dynamics PLC '],
+ 'sector': ['precision products'],
+ 'symbol': ['abdp']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['AB International Group Corp. '],
+ 'sector': ['specialty retail'],
+ 'symbol': ['abqq']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['poland'],
+ 'exchange': ['xwar'],
+ 'name': ['AB S.A. '],
+ 'sector': ['wholesalers'],
+ 'symbol': ['abe']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['france'],
+ 'exchange': ['xpar'],
+ 'name': ['AB Science S.A. '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['ab']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['AB Science S.A. '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['0q77']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['AB&Company Co. Ltd. '],
+ 'sector': ['consumer services'],
+ 'symbol': ['9251']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['AB&T Financial Corp. '],
+ 'sector': ['banking'],
+ 'symbol': ['abto']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['china'],
+ 'exchange': ['xshe'],
+ 'name': ['ABA Chemicals Corp. '],
+ 'sector': ['chemicals'],
+ 'symbol': ['300261']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['philippines'],
+ 'exchange': ['xphs'],
+ 'name': ['AbaCore Capital Holdings Inc. '],
+ 'sector': ['diversified holding companies'],
+ 'symbol': ['aba']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['Abacus Mining & Exploration Corp. '],
+ 'sector': ['non-ferrous metals'],
+ 'symbol': ['ame']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Abacus Mining & Exploration Corp. '],
+ 'sector': ['non-ferrous metals'],
+ 'symbol': ['abcff']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['australia'],
+ 'exchange': ['xasx'],
+ 'name': ['Abacus Property Group '],
+ 'sector': ['industrial/office reits'],
+ 'symbol': ['abp']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['poland'],
+ 'exchange': ['xwar'],
+ 'name': ['ABAK S.A. '],
+ 'sector': ['accounting'],
+ 'symbol': ['abk']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Abalance Corp. '],
+ 'sector': ['diversified holding companies'],
+ 'symbol': ['3856']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Aban Offshore Ltd. '],
+ 'sector': ['oil & gas products/services'],
+ 'symbol': ['523204']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['sri lanka'],
+ 'exchange': ['xcol'],
+ 'name': ['Abans Electricals PLC '],
+ 'sector': ['housewares'],
+ 'symbol': ['aban.n0000']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['ABans Enterprises Ltd. '],
+ 'sector': ['wholesalers'],
+ 'symbol': ['512165']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['sri lanka'],
+ 'exchange': ['xcol'],
+ 'name': ['Abans Finance PLC '],
+ 'sector': ['finance companies'],
+ 'symbol': ['afsl.n0000']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Abate AS Industries Ltd. '],
+ 'sector': ['diversified business services'],
+ 'symbol': ['531658']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Abattis Bioceuticals Corp. '],
+ 'sector': ['biotechnology'],
+ 'symbol': ['attbf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Abaxx Technologies Inc. '],
+ 'sector': ['computer services'],
+ 'symbol': ['abxxf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['ABB India Ltd. '],
+ 'sector': ['None'],
+ 'symbol': ['500002']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['switzerland'],
+ 'exchange': ['xswx'],
+ 'name': ['ABB Ltd. '],
+ 'sector': ['precision products'],
+ 'symbol': ['abbn']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['ABB Ltd. '],
+ 'sector': ['precision products'],
+ 'symbol': ['0nx2']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['sweden'],
+ 'exchange': ['xsto'],
+ 'name': ['ABB Ltd. '],
+ 'sector': ['precision products'],
+ 'symbol': ['abb']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['ABB Ltd. '],
+ 'sector': ['precision products'],
+ 'symbol': ['ablzf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['ABB Ltd. ADR '],
+ 'sector': ['precision products'],
+ 'symbol': ['abb']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['germany'],
+ 'exchange': ['xfra'],
+ 'name': ['ABB Ltd. ADR '],
+ 'sector': ['precision products'],
+ 'symbol': ['abja']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['nigeria'],
+ 'exchange': ['xnsa'],
+ 'name': ['Abbey Mortgage Bank PLC '],
+ 'sector': ['banking'],
+ 'symbol': ['abbeybds']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['hong kong'],
+ 'exchange': ['xhkg'],
+ 'name': ['Abbisko Cayman Ltd. '],
+ 'sector': ['biotechnology'],
+ 'symbol': ['2256']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Abbott India Ltd. '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['500488']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['Abbott Laboratories '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['abt']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/1>
+{'country': ['united states'],
+ 'exchange': ['xetr'],
+ 'name': ['Abbott Laboratories '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['abl']}
+DEBUG: Crawled (200) <GET https://www.marketwatch.com/tools/markets/stocks/a-z/A/36> (referer: https://www.marketwatch.com/tools/markets/stocks/a-z/A)
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Axactor SE '],
+ 'sector': ['diversified business services'],
+ 'symbol': ['0qig']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['norway'],
+ 'exchange': ['xosl'],
+ 'name': ['Axactor SE '],
+ 'sector': ['diversified business services'],
+ 'symbol': ['acr']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['Axalta Coating Systems Ltd. '],
+ 'sector': ['building materials/products'],
+ 'symbol': ['axta']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Axas Holdings Co. Ltd. '],
+ 'sector': ['mixed retailing'],
+ 'symbol': ['3536']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xcnq'],
+ 'name': ['Axcap Ventures Inc. '],
+ 'sector': ['finance companies'],
+ 'symbol': ['axcp']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Axcelis Technologies Inc. '],
+ 'sector': ['semiconductors'],
+ 'symbol': ['acls']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Axcella Health Inc. '],
+ 'sector': ['biotechnology'],
+ 'symbol': ['axla']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['taiwan'],
+ 'exchange': ['roco'],
+ 'name': ['Axcen Photonics Corp. '],
+ 'sector': ['networking'],
+ 'symbol': ['6530']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['Axe2 Acquisitions Inc. '],
+ 'sector': ['shell companies'],
+ 'symbol': ['axet.p']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Axel Mark Inc. '],
+ 'sector': ['toys & games'],
+ 'symbol': ['3624']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Axel Polymers Ltd. '],
+ 'sector': ['chemicals'],
+ 'symbol': ['513642']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Axell Corp. '],
+ 'sector': ['semiconductors'],
+ 'symbol': ['6730']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['philippines'],
+ 'exchange': ['xphs'],
+ 'name': ['Axelum Resources Corp. '],
+ 'sector': ['food products'],
+ 'symbol': ['axlm']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['sweden'],
+ 'exchange': ['xsto'],
+ 'name': ['Axfood AB '],
+ 'sector': ['food retail'],
+ 'symbol': ['axfo']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Axfood AB '],
+ 'sector': ['food retail'],
+ 'symbol': ['0r6r']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['zimbabwe'],
+ 'exchange': ['xzim'],
+ 'name': ['Axia Corp. Ltd. '],
+ 'sector': ['home goods retail'],
+ 'symbol': ['axia']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Axial Retailing Inc. '],
+ 'sector': ['food retail'],
+ 'symbol': ['8255']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['malaysia'],
+ 'exchange': ['xkls'],
+ 'name': ['Axiata Group Bhd '],
+ 'sector': ['wireless telecommunications services'],
+ 'symbol': ['6888']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Axiata Group Bhd '],
+ 'sector': ['wireless telecommunications services'],
+ 'symbol': ['axxtf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['sweden'],
+ 'exchange': ['xsto'],
+ 'name': ['aXichem AB Series A '],
+ 'sector': ['chemicals'],
+ 'symbol': ['axic.a']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['israel'],
+ 'exchange': ['xtae'],
+ 'name': ['Axilion Smart Mobility Ltd. '],
+ 'sector': ['wired telecommunications services'],
+ 'symbol': ['ailn']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Axim Biotechnologies Inc. '],
+ 'sector': ['biotechnology'],
+ 'symbol': ['axim']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['australia'],
+ 'exchange': ['xasx'],
+ 'name': ['Axiom Properties Ltd. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['axi']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['taiwan'],
+ 'exchange': ['roco'],
+ 'name': ['AXIOMTEK Co. Ltd. '],
+ 'sector': ['computers/consumer electronics'],
+ 'symbol': ['3088']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Axion Power International Inc. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['axpwq']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Axion Ventures Inc. '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['axnvf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['AXIOS Sustainable Growth Acquisition Corp. Cl A '],
+ 'sector': ['shell companies'],
+ 'symbol': ['axac']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['AXIOS Sustainable Growth Acquisition Corp. Rt '],
+ 'sector': ['shell companies'],
+ 'symbol': ['axac.rt']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['AXIOS Sustainable Growth Acquisition Corp. Wt '],
+ 'sector': ['None'],
+ 'symbol': ['axac.wt']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xtse'],
+ 'name': ['Axis Auto Finance Inc. '],
+ 'sector': ['consumer finance'],
+ 'symbol': ['axis']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Axis Bank Ltd. '],
+ 'sector': ['banking'],
+ 'symbol': ['532215']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Axis Bank Ltd. GDR '],
+ 'sector': ['banking'],
+ 'symbol': ['axb']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['germany'],
+ 'exchange': ['xfra'],
+ 'name': ['Axis Bank Ltd. GDR '],
+ 'sector': ['banking'],
+ 'symbol': ['uzc']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['AXIS Capital Holdings Ltd. '],
+ 'sector': ['non-life insurance'],
+ 'symbol': ['axs']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['AXIS Capital Holdings Ltd. Dep. Pfd. (Rep. 1/100th Share Pfd. '
+          'Series E) '],
+ 'sector': ['non-life insurance'],
+ 'symbol': ['axs.pre']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Axis Co. Ltd. '],
+ 'sector': ['computer services'],
+ 'symbol': ['4012']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['taiwan'],
+ 'exchange': ['roco'],
+ 'name': ['Axis Corp. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['6292']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Axis Energy Corp. '],
+ 'sector': ['shell companies'],
+ 'symbol': ['axgc']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['malaysia'],
+ 'exchange': ['xkls'],
+ 'name': ['Axis Real Estate Investment Trust '],
+ 'sector': ['industrial/office reits'],
+ 'symbol': ['5106']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Axis Technologies Group Inc. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['axtg']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['AXISCADES Technologies Ltd. '],
+ 'sector': ['None'],
+ 'symbol': ['532395']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Axita Cotton Ltd. '],
+ 'sector': ['clothing'],
+ 'symbol': ['542285']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['sweden'],
+ 'exchange': ['xsat'],
+ 'name': ['AxKid AB '],
+ 'sector': ['housewares'],
+ 'symbol': ['axkid']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['taiwan'],
+ 'exchange': ['roco'],
+ 'name': ['Axman Enterprise Co. Ltd. '],
+ 'sector': ['sports goods'],
+ 'symbol': ['6804']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['AXMIN Inc. '],
+ 'sector': ['gold'],
+ 'symbol': ['axm']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Axogen Inc. '],
+ 'sector': ['medical equipment/supplies'],
+ 'symbol': ['axgn']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Axogen Inc. '],
+ 'sector': ['medical equipment/supplies'],
+ 'symbol': ['0hkd']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['sweden'],
+ 'exchange': ['xsto'],
+ 'name': ['Axolot Solutions Holding AB '],
+ 'sector': ['industrial machinery'],
+ 'symbol': ['axolot']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Axon Enterprise Inc. '],
+ 'sector': ['defense equipment/products'],
+ 'symbol': ['0hke']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Axon Enterprise Inc. '],
+ 'sector': ['defense equipment/products'],
+ 'symbol': ['axon']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Axonics Inc. '],
+ 'sector': ['medical equipment/supplies'],
+ 'symbol': ['axnx']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['AxonPrime Infrastructure Acquisition Corp. '],
+ 'sector': ['shell companies'],
+ 'symbol': ['apmiu']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['AxonPrime Infrastructure Acquisition Corp. Cl A '],
+ 'sector': ['shell companies'],
+ 'symbol': ['apmi']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['AxonPrime Infrastructure Acquisition Corp. Wt '],
+ 'sector': ['None'],
+ 'symbol': ['apmiw']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['Axos Financial Inc. '],
+ 'sector': ['banking'],
+ 'symbol': ['ax']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['australia'],
+ 'exchange': ['xasx'],
+ 'name': ['AXP Energy Ltd. '],
+ 'sector': ['oil extraction'],
+ 'symbol': ['axp']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['AXP Energy Ltd. '],
+ 'sector': ['oil extraction'],
+ 'symbol': ['aunxf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Axsome Therapeutics Inc. '],
+ 'sector': ['biotechnology'],
+ 'symbol': ['axsm']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['AXT Inc. '],
+ 'sector': ['semiconductors'],
+ 'symbol': ['axti']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['Axtel Industries Ltd. '],
+ 'sector': ['technical services'],
+ 'symbol': ['523850']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['mexico'],
+ 'exchange': ['xmex'],
+ 'name': ['Axtel S.A.B. de C.V. Series CPO '],
+ 'sector': ['wireless telecommunications services'],
+ 'symbol': ['axtelcpo']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['malaysia'],
+ 'exchange': ['xkls'],
+ 'name': ['Axteria Group Bhd '],
+ 'sector': ['audio/video equipment'],
+ 'symbol': ['7120']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['france'],
+ 'exchange': ['xpar'],
+ 'name': ['Axway Software S.A. '],
+ 'sector': ['software'],
+ 'symbol': ['axw']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Axway Software S.A. '],
+ 'sector': ['software'],
+ 'symbol': ['0p5l']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Axxzia Inc. '],
+ 'sector': ['personal care products/appliances'],
+ 'symbol': ['4936']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Axyz Co. Ltd. '],
+ 'sector': ['food products'],
+ 'symbol': ['1381']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Aya Gold & Silver Inc. '],
+ 'sector': ['general mining'],
+ 'symbol': ['ayasf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xtse'],
+ 'name': ['Aya Gold & Silver Inc. '],
+ 'sector': ['general mining'],
+ 'symbol': ['aya']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['philippines'],
+ 'exchange': ['xphs'],
+ 'name': ['Ayala Corp. '],
+ 'sector': ['diversified holding companies'],
+ 'symbol': ['ac']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['philippines'],
+ 'exchange': ['xphs'],
+ 'name': ['Ayala Corp. Pfd. '],
+ 'sector': ['diversified holding companies'],
+ 'symbol': ['acpb1']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['philippines'],
+ 'exchange': ['xphs'],
+ 'name': ['Ayala Land Inc. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['ali']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Ayala Land Inc. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['ayaaf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Ayala Pharmaceuticals Inc. '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['ayla']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['philippines'],
+ 'exchange': ['xphs'],
+ 'name': ['AyalaLand Logistics Holdings Corp. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['allhc']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['israel'],
+ 'exchange': ['xtae'],
+ 'name': ['Ayalon Holdings Ltd. '],
+ 'sector': ['non-life insurance'],
+ 'symbol': ['ayal']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['turkey'],
+ 'exchange': ['xist'],
+ 'name': ['Aydem Yenilenebilir Enerji A.S. '],
+ 'sector': ['renewable energy generation'],
+ 'symbol': ['aydem.e']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['turkey'],
+ 'exchange': ['xist'],
+ 'name': ['Ayen Enerji A.S. '],
+ 'sector': ['renewable energy generation'],
+ 'symbol': ['ayen.e']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['malaysia'],
+ 'exchange': ['xkls'],
+ 'name': ['AYER Holdings Bhd '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['2305']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['turkey'],
+ 'exchange': ['xist'],
+ 'name': ['Ayes Celik Hasir ve Cit Sanayi A.S. '],
+ 'sector': ['building materials/products'],
+ 'symbol': ['ayes.e']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['norway'],
+ 'exchange': ['xosl'],
+ 'name': ['Ayfie Group A/S '],
+ 'sector': ['software'],
+ 'symbol': ['ayfie']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['turkey'],
+ 'exchange': ['xist'],
+ 'name': ['Aygaz A.S. '],
+ 'sector': ['gas utilities'],
+ 'symbol': ['aygaz.e']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['sweden'],
+ 'exchange': ['xsto'],
+ 'name': ['Ayima Group AB Series B '],
+ 'sector': ['advertising/marketing/public relations'],
+ 'symbol': ['ayima.b']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['india'],
+ 'exchange': ['xbom'],
+ 'name': ['AYM Syntex Ltd. '],
+ 'sector': ['clothing'],
+ 'symbol': ['508933']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Ayr Wellness Inc. '],
+ 'sector': ['farming'],
+ 'symbol': ['ayrwf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xcnq'],
+ 'name': ['Ayr Wellness Inc. '],
+ 'sector': ['farming'],
+ 'symbol': ['ayr.a']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['AYRO Inc. '],
+ 'sector': ['automobiles'],
+ 'symbol': ['ayro']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['malaysia'],
+ 'exchange': ['xkls'],
+ 'name': ['AYS Ventures Bhd '],
+ 'sector': ['building materials/products'],
+ 'symbol': ['5021']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Aytu BioPharma Inc. '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['aytu']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Ayujoy Herbals Ltd. '],
+ 'sector': ['healthcare provision'],
+ 'symbol': ['ajoy']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xcnq'],
+ 'name': ['Ayurcann Holdings Corp. '],
+ 'sector': ['pharmaceuticals'],
+ 'symbol': ['ayur']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['saudi arabia'],
+ 'exchange': ['xsau'],
+ 'name': ['AYYAN Investment Co. '],
+ 'sector': ['finance companies'],
+ 'symbol': ['2140']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['germany'],
+ 'exchange': ['xfra'],
+ 'name': ['Azarga Metals Corp. '],
+ 'sector': ['non-ferrous metals'],
+ 'symbol': ['tgpp']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Azarga Metals Corp. '],
+ 'sector': ['non-ferrous metals'],
+ 'symbol': ['euunf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['Azarga Metals Corp. '],
+ 'sector': ['non-ferrous metals'],
+ 'symbol': ['azr']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Azbil Corp. '],
+ 'sector': ['precision products'],
+ 'symbol': ['6845']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['AZ-COM Maruwa Holdings Inc. '],
+ 'sector': ['transportation services'],
+ 'symbol': ['9090']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Azearth Corp. '],
+ 'sector': ['clothing'],
+ 'symbol': ['3161']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['AZEK Co. Inc. '],
+ 'sector': ['building materials/products'],
+ 'symbol': ['azek']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['sweden'],
+ 'exchange': ['xsto'],
+ 'name': ['Azelio AB '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['azelio']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['belgium'],
+ 'exchange': ['xbru'],
+ 'name': ['Azelis Group N.V. '],
+ 'sector': ['chemicals'],
+ 'symbol': ['aze']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Azelis Group N.V. '],
+ 'sector': ['chemicals'],
+ 'symbol': ['0aa6']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['china'],
+ 'exchange': ['xshg'],
+ 'name': ['A-Zenith Home Furnishings Co. Ltd. A '],
+ 'sector': ['furniture'],
+ 'symbol': ['603389']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Azenta Inc. '],
+ 'sector': ['semiconductors'],
+ 'symbol': ['azta']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Azenta Inc. '],
+ 'sector': ['semiconductors'],
+ 'symbol': ['0hq1']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['netherlands'],
+ 'exchange': ['xams'],
+ 'name': ['Azerion Group N.V. '],
+ 'sector': ['motion picture/sound recording'],
+ 'symbol': ['azrn']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['singapore'],
+ 'exchange': ['xses'],
+ 'name': ['Azeus Systems Holdings Ltd. '],
+ 'sector': ['computer services'],
+ 'symbol': ['bbw']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['pakistan'],
+ 'exchange': ['xkar'],
+ 'name': ['Azgard Nine Ltd. '],
+ 'sector': ['clothing'],
+ 'symbol': ['anl']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['italy'],
+ 'exchange': ['xmil'],
+ 'name': ['Azienda Bresciana Petroli Nocivelli S.p.A. '],
+ 'sector': ['wholesalers'],
+ 'symbol': ['abp']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['Azimut Exploration Inc. '],
+ 'sector': ['general mining'],
+ 'symbol': ['azm']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Azimut Exploration Inc. '],
+ 'sector': ['general mining'],
+ 'symbol': ['azmtf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['italy'],
+ 'exchange': ['xmil'],
+ 'name': ['Azimut Holding S.p.A. '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['azm']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Azimut Holding S.p.A. '],
+ 'sector': ['investment advisors'],
+ 'symbol': ['0mhj']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['Azincourt Energy Corp. '],
+ 'sector': ['non-ferrous metals'],
+ 'symbol': ['aaz']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Azincourt Energy Corp. '],
+ 'sector': ['non-ferrous metals'],
+ 'symbol': ['azurf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['taiwan'],
+ 'exchange': ['roco'],
+ 'name': ['Azion Corp. '],
+ 'sector': ['computers/consumer electronics'],
+ 'symbol': ['6148']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnas'],
+ 'name': ['Aziyo Biologics Inc. '],
+ 'sector': ['medical equipment/supplies'],
+ 'symbol': ['azyo']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['bangladesh'],
+ 'exchange': ['xdha'],
+ 'name': ['Aziz Pipes Ltd. '],
+ 'sector': ['industrial products'],
+ 'symbol': ['azizpipes']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united kingdom'],
+ 'exchange': ['xlon'],
+ 'name': ['Azkoyen S.A. '],
+ 'sector': ['industrial machinery'],
+ 'symbol': ['0dog']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['spain'],
+ 'exchange': ['xmad'],
+ 'name': ['Azkoyen S.A. '],
+ 'sector': ['industrial machinery'],
+ 'symbol': ['azk']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Azoom Co. Ltd. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['3496']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['france'],
+ 'exchange': ['xpar'],
+ 'name': ['Azorean-Aquatic Technologies S.A. '],
+ 'sector': ['precision products'],
+ 'symbol': ['mlaat']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['israel'],
+ 'exchange': ['xtae'],
+ 'name': ['Azorim Investment Development & Construction Co. Ltd. '],
+ 'sector': ['residential building construction'],
+ 'symbol': ['azrm']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Azplanning Co. Ltd. '],
+ 'sector': ['construction'],
+ 'symbol': ['3490']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['israel'],
+ 'exchange': ['xtae'],
+ 'name': ['Azrieli Group Ltd. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['azrg']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['poland'],
+ 'exchange': ['xwar'],
+ 'name': ['Aztec International S.A. '],
+ 'sector': ['industrial products'],
+ 'symbol': ['azc']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Aztec Land & Cattle Co. Ltd. '],
+ 'sector': ['real estate developers'],
+ 'symbol': ['azlcz']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Aztec Minerals Corp. '],
+ 'sector': ['general mining'],
+ 'symbol': ['azztf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['Aztec Minerals Corp. '],
+ 'sector': ['general mining'],
+ 'symbol': ['azt']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['singapore'],
+ 'exchange': ['xses'],
+ 'name': ['Aztech Global Ltd. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['8az']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['south korea'],
+ 'exchange': ['xkrx'],
+ 'name': ['Aztech WB Co. Ltd. '],
+ 'sector': ['clothing'],
+ 'symbol': ['032080']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['turkey'],
+ 'exchange': ['xist'],
+ 'name': ['Aztek Teknoloji Urunleri Ticaret A.S. '],
+ 'sector': ['wholesalers'],
+ 'symbol': ['aztek.e']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['canada'],
+ 'exchange': ['xtsx'],
+ 'name': ['Azucar Minerals Ltd. '],
+ 'sector': ['general mining'],
+ 'symbol': ['amz']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['ootc'],
+ 'name': ['Azucar Minerals Ltd. '],
+ 'sector': ['general mining'],
+ 'symbol': ['axddf']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['chile'],
+ 'exchange': ['xsgo'],
+ 'name': ['Azul Azul S.A. '],
+ 'sector': ['recreational services'],
+ 'symbol': ['azulazul']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['Azul S.A. ADR '],
+ 'sector': ['passenger airlines'],
+ 'symbol': ['azul']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Azuma House Co. Ltd. '],
+ 'sector': ['residential building construction'],
+ 'symbol': ['3293']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['japan'],
+ 'exchange': ['xtks'],
+ 'name': ['Azuma Shipping Co. Ltd. '],
+ 'sector': ['water transport/shipping'],
+ 'symbol': ['9380']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['australia'],
+ 'exchange': ['xasx'],
+ 'name': ['Azure Minerals Ltd. '],
+ 'sector': ['non-ferrous metals'],
+ 'symbol': ['azs']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['Azure Power Global Ltd. '],
+ 'sector': ['renewable energy generation'],
+ 'symbol': ['azre']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['taiwan'],
+ 'exchange': ['xtai'],
+ 'name': ['AzureWave Technologies Inc. '],
+ 'sector': ['networking'],
+ 'symbol': ['3694']}
+DEBUG: Scraped from <200 https://www.marketwatch.com/tools/markets/stocks/a-z/A/36>
+{'country': ['united states'],
+ 'exchange': ['xnys'],
+ 'name': ['AZZ Inc. '],
+ 'sector': ['industrial electronics'],
+ 'symbol': ['azz']}
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1842,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 115686,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 4,
+ 'downloader/response_status_count/301': 1,
+ 'dupefilter/filtered': 29,
+ 'elapsed_time_seconds': 4.106181,
+ 'finish_reason': 'closespider_itemcount',
+ 'finish_time': datetime.datetime(2022, 11, 30, 16, 50, 52, 136911),
+ 'httpcache/firsthand': 2,
+ 'httpcache/hit': 3,
+ 'httpcache/miss': 2,
+ 'httpcache/store': 2,
+ 'httpcompression/response_bytes': 399783,
+ 'httpcompression/response_count': 4,
+ 'item_scraped_count': 295,
+ 'log_count/INFO': 10,
+ 'memusage/max': 1985564672,
+ 'memusage/startup': 1985564672,
+ 'request_depth_max': 2,
+ 'response_received_count': 4,
+ 'scheduler/dequeued': 5,
+ 'scheduler/dequeued/memory': 5,
+ 'scheduler/enqueued': 39,
+ 'scheduler/enqueued/memory': 39,
+ 'start_time': datetime.datetime(2022, 11, 30, 16, 50, 48, 30730)}
+INFO: Spider closed (closespider_itemcount)
+INFO: Error while scheduling new request
+Traceback (most recent call last):
+  File "/home/le/Desktop/programming/python/marketwatch_scraper/lib/python3.8/site-packages/twisted/internet/task.py", line 526, in _oneWorkUnit
+    result = next(self._iterator)
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/le/Desktop/programming/python/marketwatch_scraper/lib/python3.8/site-packages/twisted/internet/defer.py", line 857, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/home/le/Desktop/programming/python/marketwatch_scraper/lib/python3.8/site-packages/scrapy/core/engine.py", line 187, in <lambda>
+    d.addBoth(lambda _: self.slot.nextcall.schedule())
+AttributeError: 'NoneType' object has no attribute 'nextcall'

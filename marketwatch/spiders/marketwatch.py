@@ -144,14 +144,18 @@ class MarketwatchSpider(scrapy.Spider):
             print("exception --- error in construct url => {0}".format(ex))
 
     def processFirstPage(self,response,sel):
-        setName1(self,sel)
-        setSymbol(self,sel)
-        setCountry(self,sel)
-        setExchange(self,sel)
-        setSector(self,sel)
+        try:
+            setName1(self, sel)
+            setSymbol(self, sel)
+            setCountry(self, sel)
+            setExchange(self, sel)
+            setSector(self, sel)
 
-        loader = loadMarketWatchItemSelector(self,response,sel)
-        return loader
+            loader = loadMarketWatchItemSelector(self, response, sel)
+            return loader
+
+        except Exception as ex:
+            print("exception --- error in process first page => {0}".format(ex))
 
     def extractData1(self,response):
         try:

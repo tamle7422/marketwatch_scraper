@@ -28,7 +28,6 @@ def setLocation(self,location):
     subComma = re.sub(r"[\,]",";",location)
     self.location = '-' + subComma + '-'
 
-
 def setSymbol(self,sel):
     try:
         symbol = checkEmpty(sel.xpath(".//td[@class='name']/a/small/text()").extract())
