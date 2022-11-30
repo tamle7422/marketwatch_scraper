@@ -91,7 +91,7 @@ logTime = getTime()
 pathLog = "log"
 pathlib.Path(pathLog).mkdir(parents=True,exist_ok=True)
 
-LOG_FILE = f"{pathLog}/{logTime}.log"
+LOG_FILE = f"{pathLog}/marketwatch_{logTime}.log"
 LOG_LEVEL = "INFO"
 
 # enable and configure HTTP caching (disabled by default)

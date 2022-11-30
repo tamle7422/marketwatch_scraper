@@ -1,3 +1,9 @@
+# gitignore settings
+.scrapy
+
+bin
+lib
+
 Scripts
 Scripts/
 Scripts/*
@@ -22,10 +28,6 @@ Lib/
 lib
 lib/
 Include
-
-bin
-bin/
-/bin
 
 log
 marketwatch/log

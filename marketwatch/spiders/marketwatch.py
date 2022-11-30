@@ -18,15 +18,12 @@ class MarketwatchSpider(scrapy.Spider):
         "ITEM_PIPELINES": {
             "marketwatch.pipelines.MarketwatchPipeline": 196,
         },
-        "CLOSESPIDER_ITEMCOUNT": 13333
+        "CLOSESPIDER_ITEMCOUNT": 22
     }
 
-    # configure_logging(install_root_handler=False)
-    # logging.basicConfig(
-    #     filename='log.txt',
-    #     format='%(levelname)s: %(message)s',
-    #     level=logging.INFO, filemode="w+"
-    # )
+    configure_logging(install_root_handler=False)
+    logging.basicConfig(filename='marketwatch_log.txt',format='%(levelname)s: %(message)s',level=logging.INFO, filemode="w+"
+    )
 
     def __init__(self, *args, **kwargs):
         super(MarketwatchSpider,self).__init__(*args,**kwargs)
@@ -70,7 +67,7 @@ class MarketwatchSpider(scrapy.Spider):
     def start_requests(self):
         urls = [
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/0-9",
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/A",
+            "http://www.marketwatch.com/tools/markets/stocks/a-z/A"]
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/B",
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/C",
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/D",
@@ -78,27 +75,27 @@ class MarketwatchSpider(scrapy.Spider):
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/F",
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/G",
             # "http://www.marketwatch.com/tools/markets/stocks/a-z/H",
-            "http://www.marketwatch.com/tools/markets/stocks/a-z/I"]
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/J", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/K", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/L", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/M", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/N", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/O", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/P", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/Q", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/R", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/S", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/T", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/U", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/V", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/W", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/X", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/Y", \
-            # "http://www.marketwatch.com/tools/markets/stocks/a-z/Z"]
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/I",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/J",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/K",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/L",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/M",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/N",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/O",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/P",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/Q",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/R",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/S",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/T",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/U",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/V",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/W",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/X",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/Y",
+            # "http://www.marketwatch.com/tools/markets/stocks/a-z/Z",
 
         for url in urls:
-            # yield SplashRequest(url=url,callback=self.parse,endpoint="execute", args={"lua_source": self.script}, \
+            # yield SplashRequest(url=url,callback=self.parse,endpoint="execute",args={"lua_source": self.script}, \
             #     cache_args=['lua_source'],session_id="session1",headers={"User-Agent": random.choice(USER_AGENT_LIST)})
             yield scrapy.Request(url=url,callback=self.start,headers={"User-Agent": random.choice(USER_AGENT_LIST)})
 
@@ -106,8 +103,6 @@ class MarketwatchSpider(scrapy.Spider):
     def start(self,response):
         try:
             indexes = checkEmpty(response.xpath(".//div[contains(@id,'marketsindex')]/ul[@class='pagination']/li/a/text()").getall())
-            # if (isinstance(indexes,list)):
-            #     print("list")
 
             lastIndex = indexes[-2:-1]
             if (re.search(r"[\-]",str(lastIndex)) != None):
@@ -123,7 +118,7 @@ class MarketwatchSpider(scrapy.Spider):
                     headers={"User-Agent": random.choice(USER_AGENT_LIST)})
 
         except Exception as ex:
-            print("exception => error occurred in start method --- {0}".format(ex))
+            print("exception --- error in start method => {0}".format(ex))
 
     def constructUrl(self,response):
         try:
@@ -140,13 +135,13 @@ class MarketwatchSpider(scrapy.Spider):
                     url = "https://www.marketwatch.com" + i
                     url1 = response.urljoin(i)
 
-                    if (len(i) != None):
+                    if (len(i) != 0):
                         # yield response.follow(url=url1,callback=self.extractData1)
                         yield scrapy.Request(url=url,callback=self.extractData1, \
                             headers={"User-Agent": random.choice(USER_AGENT_LIST)})
 
         except Exception as ex:
-            print("exception => error occurred in construct url method --- {0}".format(ex))
+            print("exception --- error in construct url => {0}".format(ex))
 
     def processFirstPage(self,response,sel):
         name = checkEmpty(sel.xpath(".//td[@class='name']/a/text()").get())
@@ -197,4 +192,4 @@ class MarketwatchSpider(scrapy.Spider):
                 yield loader.load_item()
 
         except Exception as ex:
-            print("exception => error occurred in extract data method --- {0}".format(ex))
+            print("exception --- error in extract data1 => {0}".format(ex))
